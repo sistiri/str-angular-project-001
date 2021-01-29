@@ -8,6 +8,9 @@ import { Cat01Component } from './page/cat01/cat01.component';
 import { Cat02Component } from './page/cat02/cat02.component';
 import { HomeComponent } from './page/home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductCardComponent } from './common/product-card/product-card.component';
+import { ProductFiverComponent } from './common/product-fiver/product-fiver.component';
+import { ProductListComponent } from './common/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     Cat01Component,
     Cat02Component,
     HomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductCardComponent,
+    ProductFiverComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

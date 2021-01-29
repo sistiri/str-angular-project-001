@@ -3,13 +3,13 @@ export class Product {
     catId: number = 0;
     name: string = 'XY';
     description: string = 'XY';
-    image = 'src\assets\img\jegtoro.JPG';
+    image: any = 'src\assets\img\jegtoro.JPG';
     price: number = 0;
     stock: number = 0;
     featured: boolean = true;
     active: boolean = true;
 
-    constructor(id: number, catId: number, name: string, description: string, image, price: number, stock: number, featured: boolean, active: boolean) {
+    constructor(id?: number, catId?: number, name?: string, description?: string, image?: any, price?: number, stock?: number, featured?: boolean, active?: boolean) {
         this.id = id;
         this.catId = catId;
         this.name = name;

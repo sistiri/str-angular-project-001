@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../model/product';
 
 @Component({
@@ -8,7 +8,7 @@ import { Product } from '../model/product';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: Product = new Product(0, 0, 'XY', 'XY', 'src\assets\img\jegtoro.JPG', 0, 0, true, true)
+  @Input() product: Product = new Product();
 
   constructor() {
     console.log(this.product);

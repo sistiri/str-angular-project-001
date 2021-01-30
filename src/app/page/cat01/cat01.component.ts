@@ -1,4 +1,7 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/model/product';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-cat01',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Cat01Component implements OnInit {
 
-  constructor() { }
+  title: string = 'Products in Category 1.'
 
-  ngOnInit(): void {
-  }
+  @Input() product: Product = new Product;
+
+  productList: Product[] = this.productService.list;
+  currentProduct: Product = new Product();
+  phrase: string = '';
+  
+
+  constructor(
+    private productService: ProductService,
+  ) { }
+
+  
+    ngOnInit(): void {
+    }
 
 }

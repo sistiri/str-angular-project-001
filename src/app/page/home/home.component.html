@@ -1,1 +1,11 @@
 <p>home works!</p>
+
+<h1>Featured</h1>
+<div class="card-deck" *ngFor="let product of productList">
+    <app-product-card [product]="product[0]"></app-product-card>
+    <app-product-card [product]="product[1]"></app-product-card>
+    <app-product-card [product]="product[2]"></app-product-card>
+    <app-product-card [product]="product[3]"></app-product-card>
+    <app-product-card [product]="product[4]"></app-product-card>
+</div>
+    <h1>Featured</h1>

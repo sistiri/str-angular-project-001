@@ -11,6 +11,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductCardComponent } from './common/product-card/product-card.component';
 import { ProductFiverComponent } from './common/product-fiver/product-fiver.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductListComponent } from './common/product-list/product-list.compone
     ProductDetailComponent,
     ProductCardComponent,
     ProductFiverComponent,
-    ProductListComponent
+    ProductListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

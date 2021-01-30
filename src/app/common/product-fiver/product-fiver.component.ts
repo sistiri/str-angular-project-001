@@ -11,7 +11,6 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductFiverComponent implements OnInit {
 
   @Input() product: Product = new Product();
-
   @Input() productList: Product[] = this.productService.list;
 
   constructor(
@@ -19,7 +18,7 @@ export class ProductFiverComponent implements OnInit {
   ) { }
 
 
-ngOnInit(): void {
-}
+  ngOnInit(): void {
+  }
 
 }

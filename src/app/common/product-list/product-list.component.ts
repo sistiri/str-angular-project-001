@@ -15,7 +15,7 @@ export class ProductListComponent implements OnInit {
 
   @Input() phraseString: string = '';
   @Input() product: Product = new Product();
-  // @Input() list: Product[] = [];
+  
 
   productList: Product[] = this.productService.list;
   currentProduct: Product = new Product();

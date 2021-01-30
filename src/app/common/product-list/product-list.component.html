@@ -5,6 +5,6 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 
-<div class="container">
-    <app-product-card *ngFor="let product of productList | filter:phrase"></app-product-card>
+<div *ngFor="let product of productList | filter:phrase">
+    <app-product-card [product]="product"></app-product-card>
 </div>

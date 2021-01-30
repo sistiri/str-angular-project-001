@@ -3,6 +3,9 @@
   <div class="row">
     <div class="col-12">
       <router-outlet></router-outlet>
+      <app-product-card [product]="product[0]"></app-product-card>
+      <app-product-card [product]="product[1]"></app-product-card>
+       
       <app-product-detail [product]="product[0]"></app-product-detail>
       <app-product-detail [product]="product[1]"></app-product-detail>
       <app-product-detail [product]="product[2]"></app-product-detail>

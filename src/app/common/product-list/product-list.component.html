@@ -1,0 +1,10 @@
+<p>product-list works!</p>
+
+<form class="form my-2 my-lg-0">
+    <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<div class="container">
+    <app-product-card *ngFor="let product of productList | filter:phrase"></app-product-card>
+</div>

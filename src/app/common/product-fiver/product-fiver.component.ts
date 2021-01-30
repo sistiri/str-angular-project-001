@@ -12,7 +12,7 @@ export class ProductFiverComponent implements OnInit {
 
   @Input() product: Product = new Product();
 
-  productList: Product[] = this.productService.list;
+  @Input() productList: Product[] = this.productService.list;
 
   constructor(
     private productService: ProductService,

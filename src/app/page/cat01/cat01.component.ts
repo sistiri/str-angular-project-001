@@ -13,8 +13,9 @@ export class Cat01Component implements OnInit {
   title: string = 'Products in Category 1.'
 
   @Input() product: Product = new Product;
-
-  productList: Product[] = this.productService.list;
+  @Input() phraseString: string = '';
+  @Input() productList: Product[] = this.productService.list;
+  
   currentProduct: Product = new Product();
   phrase: string = '';
   

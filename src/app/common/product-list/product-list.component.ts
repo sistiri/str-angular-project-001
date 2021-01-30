@@ -23,17 +23,16 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-  }
-
-  onSelectProduct(product: Product): void {
-    this.currentProduct = product;
   }
 
   onChangePhrase(event: Event): void {
     this.phrase = (event.target as HTMLInputElement).value;
   }
 
+  onSelectProduct(product: Product): void {
+    this.currentProduct = product;
+  }
 }

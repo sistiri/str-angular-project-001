@@ -5,6 +5,6 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 
-<div class="d-flex justify-content-center" *ngFor="let product of productList | categoryFilter:categoryId | filter:phrase">
+<div class="d-flex flex-row" *ngFor="let product of productList | categoryFilter:categoryId | filter:phrase">
     <app-product-card class="" [product]="product"></app-product-card>
 </div>

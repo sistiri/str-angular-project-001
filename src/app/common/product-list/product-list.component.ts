@@ -4,6 +4,7 @@ import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 
 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -18,8 +19,8 @@ export class ProductListComponent implements OnInit {
   @Input() categoryId: number = null;
   
 
-  productList: Product[] = this.productService.list;
-  currentProduct: Product = new Product();
+  @Input() productList: Product[] = this.productService.list;
+  @Input() currentProduct: Product = new Product();
   phrase: string = '';
 
 

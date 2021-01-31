@@ -1,9 +1,8 @@
 <p>cat02 works!</p>
 
-<!-- <div class="d-flex flex-row"> -->
-   
-   
-    <app-product-list [categoryId]=2 [phraseString]="phrase"></app-product-list>
+<h2>Featured Red Products</h2>
+<app-product-fiver [productList]="topFiveFeaturedRedProducts"></app-product-fiver>
 
+<h2>All Blue Products</h2>
+<app-product-list [categoryId]=2 [phraseString]="phrase"></app-product-list>
 
-<!-- </div> -->

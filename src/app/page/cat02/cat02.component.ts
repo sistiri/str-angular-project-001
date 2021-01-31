@@ -14,14 +14,22 @@ export class Cat02Component implements OnInit {
   @Input() product: Product = new Product;
   @Input() phraseString: string = '';
   @Input() productList: Product[] = this.productService.list;
+  @Input() catId: number = null;
 
-  currentProduct: Product = new Product();
+  @Input() currentProduct: Product = new Product();
   phrase: string = '';
   
+  @Input() topFiveFeaturedRedProducts: Product[] = this.productList.filter( product => product.featured && product.catId === 2 )
+  .sort( () => 0.5 - Math.random())
+  .slice(0, 5);
 
   constructor(
     private productService: ProductService,
   ) { }
+
+  onChangePhrase(event: Event): void {
+     this.phrase = (event.target as HTMLInputElement).value;
+   }
 
   ngOnInit(): void {
   }

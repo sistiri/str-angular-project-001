@@ -17,9 +17,13 @@ export class Cat01Component implements OnInit {
   @Input() productList: Product[] = this.productService.list;
   @Input() catId: number = null;
 
-  currentProduct: Product = new Product();
+  @Input() currentProduct: Product = new Product();
   phrase: string = '';
   
+  @Input() topFiveFeaturedBlueProducts: Product[] = this.productList.filter( product => product.featured && product.catId === 1 )
+  // .filter( product => product.catId = 1 )
+  .sort( () => 0.5 - Math.random())
+  .slice(0, 5);
 
   constructor(
     private productService: ProductService,

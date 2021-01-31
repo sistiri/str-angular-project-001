@@ -15,7 +15,8 @@ export class Cat01Component implements OnInit {
   @Input() product: Product = new Product;
   @Input() phraseString: string = '';
   @Input() productList: Product[] = this.productService.list;
-  
+  @Input() catId: number = null;
+
   currentProduct: Product = new Product();
   phrase: string = '';
   
@@ -24,7 +25,10 @@ export class Cat01Component implements OnInit {
     private productService: ProductService,
   ) { }
 
-  
+  onChangePhrase(event: Event): void {
+     this.phrase = (event.target as HTMLInputElement).value;
+   }
+
     ngOnInit(): void {
     }
 

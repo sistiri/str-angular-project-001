@@ -1,12 +1,20 @@
 <p>product-fiver works!</p>
 
-<div class="card-deck">
 
-<app-product-card [product]="productList[0]"></app-product-card>
-<app-product-card [product]="productList[1]"></app-product-card>
-<app-product-card [product]="productList[2]"></app-product-card>
-<app-product-card [product]="productList[3]"></app-product-card>
-<app-product-card [product]="productList[4]"></app-product-card>
-
-
+<div class="row">
+    <div class="col-2">
+        <app-product-card [product]="productList[0]"></app-product-card>
+    </div>
+    <div class="col-2">
+        <app-product-card [product]="productList[1]"></app-product-card>
+    </div>
+    <div class="col-2">
+        <app-product-card [product]="productList[2]"></app-product-card>
+    </div>
+    <div class="col-2">
+        <app-product-card [product]="productList[3]"></app-product-card>
+    </div>
+    <div class="col-2">
+        <app-product-card [product]="productList[4]"></app-product-card>
+    </div>
 </div>

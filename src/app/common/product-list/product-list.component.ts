@@ -15,11 +15,13 @@ export class ProductListComponent implements OnInit {
 
   @Input() phraseString: string = '';
   @Input() product: Product = new Product();
+  @Input() categoryId: number = null;
   
 
   productList: Product[] = this.productService.list;
   currentProduct: Product = new Product();
   phrase: string = '';
+
 
   constructor(
     private productService: ProductService,

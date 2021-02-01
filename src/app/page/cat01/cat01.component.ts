@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class Cat01Component implements OnInit {
 
-  title: string = 'Products in Category 1.'
+  title: string = 'Blue Category'
 
   @Input() product: Product = new Product;
   @Input() phraseString: string = '';

@@ -31,10 +31,6 @@ export class ProductTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChangePhrase(event: Event): void {
-    this.phrase = (event.target as HTMLInputElement).value;
-  }
-
   onSelectProduct(product: Product): void {
     this.currentProduct = product;
   }

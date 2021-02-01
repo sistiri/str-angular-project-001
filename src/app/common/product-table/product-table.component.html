@@ -1,11 +1,3 @@
-<p>product-table works!</p>
-
-<form class="form my-2 my-lg-0">
-    <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
-
-
 <div class="row">
     <div class="col-8">
         <table class="table table-striped">
@@ -31,7 +23,7 @@
 
                     <td>{{ product.id }}</td>
                     <td>{{ product.name }}</td>
-                    <td><img src="{{ product.image }}" alt="{{ product.name }}"></td>
+                    <td><img class="rounded" src="{{ product.image }}" alt="{{ product.name }}"></td>
                     <td>{{ product.description }}</td>
                     <td>{{ product.price }}</td>
                     <td>{{ product.stock }}</td>
@@ -44,7 +36,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-4 pt-5">
+    <div class="col-4 pt-5 sticky">
         <app-product-card [product]="currentProduct"></app-product-card>
     </div>
 </div>

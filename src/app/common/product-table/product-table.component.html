@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Show</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--
+        FELADAT!
+        Egészítsd ki ezzel az *ngFor attribútum értékét
+        (függőleges vonallal kezdőik, az is kell):
+           | filter:phraseString:'name' | sorter:columnKey
+       -->
+                <tr *ngFor="let product of productList | categoryFilter:categoryId | filter:phraseString:'name'">
+
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td><img class="rounded" src="{{ product.image }}" alt="{{ product.name }}"></td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.stock }}</td>
+                    <td>
+                        <button (click)="onSelectProduct(product)" class="btn btn-info">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4 pt-5 sticky">
+        <app-product-card [product]="currentProduct"></app-product-card>
+    </div>
+</div>

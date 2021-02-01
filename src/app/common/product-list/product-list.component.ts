@@ -1,9 +1,6 @@
-import { Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
-
-
 
 @Component({
   selector: 'app-product-list',
@@ -12,16 +9,10 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  title = 'Product List';
-
-  @Input() phraseString: string = '';
   @Input() product: Product = new Product();
-  @Input() categoryId: number = null;
-  
-
   @Input() productList: Product[] = this.productService.list;
-  @Input() currentProduct: Product = new Product();
-  phrase: string = '';
+  @Input() phraseString: string = '';
+ 
 
 
   constructor(
@@ -31,11 +22,4 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChangePhrase(event: Event): void {
-    this.phrase = (event.target as HTMLInputElement).value;
-  }
-
-  onSelectProduct(product: Product): void {
-    this.currentProduct = product;
-  }
 }

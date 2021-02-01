@@ -10,7 +10,7 @@ import { HomeComponent } from './page/home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
 import { ProductFiverComponent } from './common/product-fiver/product-fiver.component';
-import { ProductListComponent } from './common/product-list/product-list.component';
+import { ProductTableComponent } from './common/product-table/product-table.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { CategoryFilterPipe } from './pipe/category-filter.pipe';
 
@@ -24,7 +24,7 @@ import { CategoryFilterPipe } from './pipe/category-filter.pipe';
     ProductDetailComponent,
     ProductCardComponent,
     ProductFiverComponent,
-    ProductListComponent,
+    ProductTableComponent,
     FilterPipe,
     CategoryFilterPipe
   ],

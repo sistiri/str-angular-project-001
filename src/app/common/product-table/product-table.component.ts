@@ -6,18 +6,18 @@ import { ProductService } from 'src/app/service/product.service';
 
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  selector: 'app-product-table',
+  templateUrl: './product-table.component.html',
+  styleUrls: ['./product-table.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductTableComponent implements OnInit {
 
   title = 'Product List';
 
   @Input() phraseString: string = '';
   @Input() product: Product = new Product();
   @Input() categoryId: number = null;
-  
+
 
   @Input() productList: Product[] = this.productService.list;
   @Input() currentProduct: Product = new Product();

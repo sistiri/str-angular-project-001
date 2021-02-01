@@ -10,9 +10,6 @@ import { Product } from '../model/product';
 })
 export class ProductService {
 
-  constructor() { }
-
-  
   list: Product[] = JSON.parse(JSON.stringify(
     [
         {
@@ -567,5 +564,18 @@ export class ProductService {
         }
     ]
   ));
+  constructor() { }
 
+  
+  
+  getFeatured(randomized?: boolean): Product[] {
+      const featured = this.list.filter( item => item.featured );
+      return randomized ? this.randomize(featured) : featured;
+  }
+
+  randomize(sourceArray: any[]): any[] {
+      return sourceArray.sort( () => Math.random() - 0.5);
+  }
+  
+  
   }

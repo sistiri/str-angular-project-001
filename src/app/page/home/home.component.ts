@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   currentProduct: Product = new Product();
   phrase: string = '';
   
+  featuredProduct: Product[] = this.productService.getFeatured(true)
+  .slice(0, 5);
 
   constructor(
     private productService: ProductService,

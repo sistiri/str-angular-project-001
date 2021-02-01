@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/model/product';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  title = 'Home';
+  
+  @Input() product: Product = new Product;
+
+  productList: Product[] = this.productService.list;
+  currentProduct: Product = new Product();
+  phrase: string = '';
+  
+
+  constructor(
+    private productService: ProductService,
+  ) { }
+
+// Kiválasztom a kiemelt termékeket (az összes termék a products tömbben van a példa kedvéért): 
+// featuredProducts: Product[] = this.productList.filter(product => product.featured);
+// // Összekeverem a tömb elemeit: 
+// shakedFeaturedProducts: Product[] = this.featuredProducts.sort(() => 0.5 - Math.random());
+// // Kiválasztom az első ötöt:
+// @Input() selectedFeaturedProducts: Product[] = this.featuredProducts.slice(0, 5);
+
+@Input() topFiveFeaturedProducts: Product[] = this.productList.filter( product => product.featured )
+    .sort( () => 0.5 - Math.random())
+    .slice(0, 5);
+
+@Input() topFiveNotFeaturedProducts: Product[] = this.productList.filter( product => !product.featured )
+    .sort( () => 0.5 - Math.random())
+    .slice(0, 5);
 
   ngOnInit(): void {
   }

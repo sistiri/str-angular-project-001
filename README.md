@@ -1,4 +1,4 @@
-# Angular Első Csapatmunka
+# Angular Első Csapatmunkaaaa
 
 ## Feladat
 Készítsetek egy Webshopot Angular keretrendszer segítségével.
@@ -44,17 +44,14 @@ Amint látjátok, a fő komponenseket már elkészítettem és a menüt is beál
 - Ez a főoldala a webshopnak.
 - Jelenjen meg egy kiemelt termék sor az oldal tetején.  
 > 5 kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
-- Jelenjen meg egy akciós termék sor a kiemelt termékek alatt, ide bármilyen random termék 
-kerülhet, szintén 5 darab legyen.
+- Jelenjen meg egy akciós termék sor a kiemelt termékek alatt, ide bármilyen random termék kerülhet, szintén 5 darab legyen.
 
 ## Category oldalak
 A kategória oldalak linkjét a ConfigService -ben tudjátok átnevezni.
 - Jelenjen meg itt is a kiemelt termék sor 5 termékkel, de ezeknek már ebből a kategóriából kell jönnie. 
 Ezek azok a termékek amelyek az adott kategóriához tartoznak és a featured tulajdonságuk true.
-- Jelenjen meg alatta a terméklista. Itt az összes termék látható legyen rácsrendszerben, amely 
-az adott kategóriában található. Azt, hogy melyik termék melyik kategóriában van, a catId mondja meg.
-- Legyen a terméklista tetején egy szűrőmező. Ez egy input mező, ha gépelni kezdenek bele, akkor 
-a név alapján kezdje el szűrni a termékeket, a legutóbbi feladathoz hasonlóan.
+- Jelenjen meg alatta a terméklista. Itt az összes termék látható legyen rácsrendszerben, amely az adott kategóriában található. Azt, hogy melyik termék melyik kategóriában van, a catId mondja meg.
+- Legyen a terméklista tetején egy szűrőmező. Ez egy input mező, ha gépelni kezdenek bele, akkor a név alapján kezdje el szűrni a termékeket, a legutóbbi feladathoz hasonlóan.
 
 ## Szükséges komponensek
 Ezeket nektek kell legenerálni, például így: `ng g c common/product-card`
@@ -80,7 +77,7 @@ lapozó gombokkal.
 ### 3. Termék lista komponens
 Ez a komponens hasonlóan működik mint a termék lapozó, de ez korlátlan számú terméket 
 képes megjeleníteni.
-- Működése: input tulajdonságként kapja meg a termékek tömbjét. Ezeket bejárva (*ngFor) 
+- Működése: input tulajdonságként kapja meg a termékek tömbjét (list valtozo). Ezeket bejárva (*ngFor) 
 minden terméket egy product-card komponenssel jelenít meg.
 - Szűrés: generáljatok egy filter pipe -ot és azt alkalmazzátok a szűrésre. 
 > Legyen egy input mező a termékek felett (de ezen a komponensen belül).  

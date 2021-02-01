@@ -1,10 +1,11 @@
-<h2>Featured Red Products</h2>
-<app-product-fiver [productList]="topFiveFeaturedRedProducts"></app-product-fiver>
+<h2>Product List</h2>
 
-<h2>All Red Products</h2>
 <form class="form-inline my-2 my-lg-0">
     <!--onChangePhrase($event) metódus az input elem keyup eseményére.-->
     <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Product Name">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
-<app-product-table [categoryId]=2 [phraseString]="phrase"></app-product-table>
+
+<div class="container">
+    <app-product-list [phraseString]="phrase" [product]="productList"></app-product-list>
+</div>

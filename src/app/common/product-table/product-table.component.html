@@ -19,7 +19,7 @@
         (függőleges vonallal kezdőik, az is kell):
            | filter:phraseString:'name' | sorter:columnKey
        -->
-                <tr *ngFor="let product of productList | categoryFilter:categoryId | filter:phraseString:'name'">
+                <tr *ngFor="let product of productList | filter:phraseString:'name'">
 
                     <td>{{ product.id }}</td>
                     <td>{{ product.name }}</td>

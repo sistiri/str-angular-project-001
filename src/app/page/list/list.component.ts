@@ -13,22 +13,15 @@ export class ListComponent implements OnInit {
   
   productList: Product[] = this.productService.list;
 
-  /**
-   * FELADAT!
-   * Hozd létre az alábbi változót.
-   * @var phrase {string} - a keresőkifejezés.
-   */
-
+  /* keresőkifejezés*/
    phrase: string = ''
-
 
   constructor(
     private productService: ProductService,
   ) {}
 
   /**
-   * FELADAT!
-   * Hozz létre egy új metódust, ami kezeli a keresőkifejezést.
+   * metódus, ami kezeli a keresőkifejezést.
    * Neve: onChangePhrase
    * Működése: a this.phrase értékét beállítja az
    *  (event.target as HTMLInputElement) értékére.
@@ -39,7 +32,6 @@ export class ListComponent implements OnInit {
    onChangePhrase(event: Event): void {
      this.phrase = (event.target as HTMLInputElement).value;
    }
-
 
   ngOnInit(): void {
   }

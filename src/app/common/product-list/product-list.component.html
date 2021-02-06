@@ -1,0 +1,16 @@
+<div class="container">
+ 
+    <div class="row">
+        
+        <div class="col-sm-6 col-lg-2" *ngFor="let product of productList | categoryFilter:categoryId | filter: phraseString:'name'">
+          
+            <app-product-card [product]="product"></app-product-card>
+     
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- RESZPONZIVITÁS: mobil nézetben 1, tablet nézetben 2 és asztali nézetben 5 termék 
+jelenjen meg egymás mellett. -->

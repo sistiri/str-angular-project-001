@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from './model/product';
+
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,5 @@ import { Product } from './model/product';
 export class AppComponent {
   title = 'str-angular-project001';
 
-  product: Product[] = [
-    new Product(0, 0, 'Termék neve', 'A termékről szóló leírás', 'src\assets\img\jegtoro.JPG', 0, 0, true, true),
-    new Product(1, 1, 'XY', 'XY', 'src\assets\img\jegtoro.JPG', 0, 0, true, true),
-    new Product(2, 2, 'XY', 'XY', 'src\assets\img\jegtoro.JPG', 0, 0, true, true),
-  ];
+  
 }

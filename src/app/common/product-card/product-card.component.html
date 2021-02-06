@@ -1,28 +1,14 @@
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+<div class="card text-center">
+    <img src="{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
     <div class="card-body">
-      <h5 class="card-title">
-        <p>{{ product.name }}</p>
-      </h5>
-      <p class="card-text">{{ product.description }}</p>
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text"><small class="text-info">{{ product.stock }} boxes in stock</small></p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ product.active }}</li>
-      <li class="list-group-item">{{ product.stock }}</li>
-      <li class="list-group-item">{{ product.price }}</li>
+        <li class="list-group-item font-weight-bold text-danger">{{ product.price }}</li>
+        <li class="list-group-item">
+            <a href="#" class="btn btn-success">Buy now!</a>
+        </li>
     </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
- 
-<p>{{ product.id }}</p>
-<p>{{ product.catId }}</p>
-
-<p></p>
-<p>{{ product.image }}</p>
-<p></p>
-<p></p>
-<p>{{ product.featured }}</p>
-<p></p>
+</div>

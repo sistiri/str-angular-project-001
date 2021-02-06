@@ -4,6 +4,7 @@ import { Cat01Component } from './page/cat01/cat01.component';
 import { Cat02Component } from './page/cat02/cat02.component';
 import { ListComponent } from './page/list/list.component';
 import { HomeComponent } from './page/home/home.component';
+import { AdminComponent } from './page/admin/admin.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'cat02',
     component: Cat02Component,
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
   },
   {
     path: 'list',

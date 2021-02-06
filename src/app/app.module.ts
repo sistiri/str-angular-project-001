@@ -15,6 +15,7 @@ import { ProductTableComponent } from './common/product-table/product-table.comp
 import { FilterPipe } from './pipe/filter.pipe';
 import { CategoryFilterPipe } from './pipe/category-filter.pipe';
 import { ProductListComponent } from './common/product-list/product-list.component';
+import { AdminComponent } from './page/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductListComponent } from './common/product-list/product-list.compone
     ProductTableComponent,
     FilterPipe,
     CategoryFilterPipe,
-    ProductListComponent
+    ProductListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

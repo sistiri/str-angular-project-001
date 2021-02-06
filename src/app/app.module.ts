@@ -30,6 +30,7 @@ import { AdminComponent } from './page/admin/admin.component';
     ProductFiverComponent,
     ProductTableComponent,
     FilterPipe,
+    AdminComponent,
     CategoryFilterPipe,
     ProductListComponent,
     AdminComponent

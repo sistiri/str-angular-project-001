@@ -18,6 +18,7 @@ export class ConfigService {
     {text: 'BLUE Products', link: '/cat01'},
     {text: 'RED Products', link: '/cat02'},
     {text: 'ALL Products', link: '/list'},
+    {text: 'Admin', link: '/admin'},
   ];
 
   constructor() { }

@@ -19,6 +19,7 @@ import { ProductListComponent } from './common/product-list/product-list.compone
 import { AdminComponent } from './page/admin/admin.component';
 import { RandomPipe } from './pipe/random.pipe';
 import { FeaturedPipe } from './pipe/featured.pipe';
+import { DataEditorComponent } from './common/data-editor/data-editor.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FeaturedPipe } from './pipe/featured.pipe';
     ProductListComponent,
     AdminComponent,
     RandomPipe,
-    FeaturedPipe
+    FeaturedPipe,
+    DataEditorComponent
   ],
   imports: [
     BrowserModule,

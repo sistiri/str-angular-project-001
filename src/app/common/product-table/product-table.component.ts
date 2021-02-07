@@ -11,18 +11,17 @@ import { ProductService } from 'src/app/service/product.service';
   templateUrl: './product-table.component.html',
   styleUrls: ['./product-table.component.scss']
 })
+
 export class ProductTableComponent implements OnInit {
 
-  title = 'Product List';
+  title = 'Product Table';
 
   @Input() phraseString: string = '';
   @Input() product: Product = new Product();
   @Input() categoryId: number = null;
-
-
   @Input() productList$: Observable<Product[]> = this.productService.getAll();
   @Input() currentProduct: Product = new Product();
-  phrase: string = '';
+  
 
 
   constructor(

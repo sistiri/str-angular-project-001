@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product'
 import { ProductService } from 'src/app/service/product.service';
 
@@ -11,7 +12,8 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductFiverComponent implements OnInit {
 
   @Input() product: Product = new Product();
-  @Input() productList: Product[] = this.productService.list;
+  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() categoryId: number = null;
  
 
 

@@ -15,28 +15,27 @@ export class ProductService {
         private http: HttpClient,
     ) { }
 
-        // Get all users from the server.
-
-        getAll(): Observable<Product[]> {
-            return this.http.get<Product[]>(this.apiUrl);
-        }
-        // Get one user.
-        get(product: Product): Observable<Product> {
-            return this.http.get<Product>(`${this.apiUrl}/${product.id}`);
-        }
-        // Create new user.
-        add(product: Product): Observable<Product> {
-            return this.http.post<Product>(this.apiUrl, product);
-        }
-        // Update user data
-        update(product: Product): Observable<Product> {
-            return this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product);
-        }
-        // Remove user.
-        remove(product: Product): Observable<Product> {
-            return this.http.delete<Product>(`${this.apiUrl}/${product.id}`)
-        }
-        
+    // Get all users from the server.
+    getAll(): Observable<Product[]> {
+        return this.http.get<Product[]>(this.apiUrl);
+    }
+    // Get one user.
+    get(product: Product): Observable<Product> {
+        return this.http.get<Product>(`${this.apiUrl}/${product.id}`);
+    }
+    // Create new user.
+    add(product: Product): Observable<Product> {
+        return this.http.post<Product>(this.apiUrl, product);
+    }
+    // Update user data
+    update(product: Product): Observable<Product> {
+        return this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product);
+    }
+    // Remove user.
+    remove(product: Product): Observable<Product> {
+        return this.http.delete<Product>(`${this.apiUrl}/${product.id}`)
+    }
+    
 
     // Nem lehet az Array.filter  es Array.sort metodust hasznalni Observable Array eseteben, ezert ezek nem mukodnek: 
 
@@ -50,6 +49,5 @@ export class ProductService {
     // }
 
    
-
 
 }

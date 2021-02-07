@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
+
 import { Observable } from 'rxjs/internal/Observable';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
@@ -12,10 +14,10 @@ export class HomeComponent implements OnInit {
 
   title = 'Home';
 
-  productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() productList$: Observable<Product[]> = this.productService.getAll();
   @Input() product: Product = new Product;
 
-  currentProduct: Product = new Product();
+  // currentProduct: Product = new Product();
   phrase: string = '';
 
   constructor(

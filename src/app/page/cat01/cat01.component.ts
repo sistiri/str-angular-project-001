@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -14,16 +15,12 @@ export class Cat01Component implements OnInit {
 
   @Input() product: Product = new Product;
   @Input() phraseString: string = '';
-  @Input() productList: Product[] = this.productService.list;
-  @Input() catId: number = null;
+  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  // @Input() catId: number = null;
   @Input() currentProduct: Product = new Product();
   phrase: string = '';
   
-  @Input() topFiveFeaturedBlueProducts: Product[] = this.productList.filter( product => product.featured && product.catId === 1 )
-  // .filter( product => product.catId = 1 )
-  .sort( () => 0.5 - Math.random())
-  .slice(0, 5);
-
+  
   constructor(
     private productService: ProductService,
   ) { }

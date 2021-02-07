@@ -1,6 +1,8 @@
 <h2>Featured Red Products</h2>
-<app-product-fiver [productList]="topFiveFeaturedRedProducts"></app-product-fiver>
-
+<app-product-fiver
+[productList$]="productList$ | async | featured | random | slice:0:5" 
+[categoryId]=2
+></app-product-fiver>
 <h2>All Red Products</h2>
 <div class="mb-2">
     <form class="form-inline my-2 my-lg-0">
@@ -11,5 +13,9 @@
 </div>
 
 <div class="container">
-    <app-product-list [categoryId]=2 [phraseString]="phrase" [product]="productList"></app-product-list>
+    <app-product-list 
+    [categoryId]=2 
+    [phraseString]="phrase" 
+    [product]="productList$ | async"
+    ></app-product-list>
 </div>

@@ -15,7 +15,7 @@ export class Cat02Component implements OnInit {
   @Input() product: Product = new Product;
   @Input() phraseString: string = '';
   @Input() productList$: Observable<Product[]> = this.productService.getAll();
-  @Input() catId: number = null;
+  @Input() categoryId: number = null;
 
   @Input() currentProduct: Product = new Product();
   phrase: string = '';

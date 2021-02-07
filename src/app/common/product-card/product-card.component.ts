@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import * as EventEmitter from 'events';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -11,7 +12,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductCardComponent implements OnInit {
 
   @Input() product: Product = new Product();
-  @Input() productList: Product[] = this.productService.list;
+  @Input() productList$: Observable<Product[]> = this.productService.getAll();
   // @Output() buyProduct: EventEmitter<Product> = new EventEmitter()
 
   constructor(

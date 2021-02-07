@@ -38,13 +38,13 @@ export class ProductService {
         }
         
 
-        // Nem lehet az Array.filter metodussal szurni Observable Array-t, ezert ez nem mukodik: 
+    // Nem lehet az Array.filter  es Array.sort metodust hasznalni Observable Array eseteben, ezert ezek nem mukodnek: 
+
     // getFeatured(randomized?: boolean): Observable<Product> {
-    //     const featured = this.getAll().filter(product => product.featured)
-    //     // const featured = this.list.filter(item => item.featured);
+    // const featured = this.list.filter(item => item.featured);
     //     return randomized ? this.randomize(featured) : featured;
     // }
-
+    // 
     // randomize(sourceArray: Observable<Product[]>): any[] {
     //     return sourceArray.sort(() => Math.random() - 0.5);
     // }

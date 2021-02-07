@@ -13,15 +13,16 @@
               <td *ngFor="let col of cols">
                 <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
                 <span *ngIf="!col.editable">{{ product[col.key] }}</span>
+                <span *ngIf="col.editable">{{ product[col.key] }}</span>
               </td>
               <td>
                 <div class="btn-group">
-                  <button (click)="onUpdate(product)" class="btn btn-info">
+                 <!--  <button (click)="onUpdate(product)" class="btn btn-info">
                     <i class="fa fa-refresh"></i>
                   </button>
                   <button (click)="onDelete(product)" class="btn btn-danger">
                     <i class="fa fa-trash"></i>
-                  </button>
+                  </button> -->
                 </div>
               </td>
             </tr>

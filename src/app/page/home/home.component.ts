@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -10,10 +11,12 @@ import { ProductService } from 'src/app/service/product.service';
 export class HomeComponent implements OnInit {
 
   title = 'Home';
-  
-  @Input() product: Product = new Product;
 
-  productList: Product[] = this.productService.list;
+  productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() product: Product = new Product;
+  @Input() allRandomized: Observable<Product[]> = this.productService.randomize(this.productList$);
+  
+
   currentProduct: Product = new Product();
   phrase: string = '';
   

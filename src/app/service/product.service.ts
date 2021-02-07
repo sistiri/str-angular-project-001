@@ -1,9 +1,7 @@
-import { JsonPipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Product } from '../model/product';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
-
 
 
 @Injectable({
@@ -47,9 +45,11 @@ export class ProductService {
     //     return randomized ? this.randomize(featured) : featured;
     // }
 
-    randomize(sourceArray: any[]): any[] {
-        return sourceArray.sort(() => Math.random() - 0.5);
-    }
+    // randomize(sourceArray: Observable<Product[]>): any[] {
+    //     return sourceArray.sort(() => Math.random() - 0.5);
+    // }
+
+   
 
 
 }

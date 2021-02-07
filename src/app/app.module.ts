@@ -16,6 +16,7 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { CategoryFilterPipe } from './pipe/category-filter.pipe';
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { AdminComponent } from './page/admin/admin.component';
+import { RandomPipe } from './pipe/random.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AdminComponent } from './page/admin/admin.component';
     AdminComponent,
     CategoryFilterPipe,
     ProductListComponent,
-    AdminComponent
+    AdminComponent,
+    RandomPipe
   ],
   imports: [
     BrowserModule,

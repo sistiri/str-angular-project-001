@@ -1,10 +1,12 @@
-<!-- Igy tesztelhetjuk az adatokat: -->
-<!-- {{featuredProducts | json}} -->
+adat teszt:
+{{ productList$ }}
 
 <h2>Featured Products</h2>
 
-<app-product-fiver [productList$]="productList$ | async | featured | random | slice:0:5"></app-product-fiver>
+<app-product-fiver [productList$]="productList$ | async"></app-product-fiver>
 
 <h2>Products On Sale</h2>
 
-<app-product-fiver [productList$]="productList$ | async | featured | random | slice:0:5"></app-product-fiver>
+<app-product-fiver [productList$]="productList$ | async"></app-product-fiver>
+
+<!-- featured | random | slice:0:5 -->

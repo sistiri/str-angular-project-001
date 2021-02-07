@@ -11,8 +11,11 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductCardComponent implements OnInit {
 
+  @Input() phraseString: string = '';
   @Input() product: Product = new Product();
+  @Input() categoryId: number = null;
   @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() currentProduct: Product = new Product();
   // @Output() buyProduct: EventEmitter<Product> = new EventEmitter()
 
   constructor(

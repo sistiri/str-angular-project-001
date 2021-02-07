@@ -10,10 +10,11 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  @Input() product: Product = new Product();
-  @Input() productList$: Observable<Product[]> = this.productService.getAll();
   @Input() phraseString: string = '';
+  @Input() product: Product = new Product();
   @Input() categoryId: number = null;
+  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() currentProduct: Product = new Product();
  
 
 

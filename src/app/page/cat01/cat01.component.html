@@ -1,16 +1,19 @@
 <h2>Featured Blue Products</h2>
-<app-product-fiver [productList]="topFiveFeaturedBlueProducts"></app-product-fiver>
+<app-product-fiver 
+[productList$]="cat01Products$ | featured | random" 
+></app-product-fiver>
 
 <h2>All Blue Products</h2>
 <div class="mb-2">
     <form class="form-inline my-2 my-lg-0">
-    <!--onChangePhrase($event) metódus az input elem keyup eseményére.-->
-    <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Product Name">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
+        <!--onChangePhrase($event) metódus az input elem keyup eseményére.-->
+        <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Product Name">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
 </div>
-
-
 <div class="container">
-    <app-product-list [categoryId]=1 [phraseString]="phrase" [product]="productList" [categoryId]=1></app-product-list>
+    <app-product-list 
+    [phraseString]="phrase" 
+    [productList$]="cat01Products$"
+    ></app-product-list>
 </div>

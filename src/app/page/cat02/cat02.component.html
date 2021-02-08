@@ -1,6 +1,7 @@
 <h2>Featured Red Products</h2>
-<app-product-fiver [productList]="topFiveFeaturedRedProducts"></app-product-fiver>
-
+<app-product-fiver
+[productList$]="cat02Products$ | featured | random" 
+></app-product-fiver>
 <h2>All Red Products</h2>
 <div class="mb-2">
     <form class="form-inline my-2 my-lg-0">
@@ -11,5 +12,8 @@
 </div>
 
 <div class="container">
-    <app-product-list [categoryId]=2 [phraseString]="phrase" [product]="productList"></app-product-list>
+    <app-product-list 
+    [phraseString]="phrase" 
+    [productList$]="cat02Products$"
+    ></app-product-list>
 </div>

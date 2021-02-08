@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +13,20 @@ import { ProductService } from 'src/app/service/product.service';
 export class HomeComponent implements OnInit {
 
   title = 'Home';
-  
+
+  // @Input() productList$: Observable<Product[]> = this.productService.getAll();
   @Input() product: Product = new Product;
 
-  productList: Product[] = this.productService.list;
-  currentProduct: Product = new Product();
+  featuredProducts$: Observable<Product[]> = this.productService.getAll().pipe(
+    map( products => products.filter( product => product.featured == true))
+  )
+
+  notFeaturedProducts$: Observable<Product[]> = this.productService.getAll().pipe(
+    map( products => products.filter( product => product.featured == false))
+  )
+
+  // currentProduct: Product = new Product();
   phrase: string = '';
-  
-  featuredProduct: Product[] = this.productService.getFeatured(true)
-  .slice(0, 5);
 
   constructor(
     private productService: ProductService,
@@ -31,13 +39,14 @@ export class HomeComponent implements OnInit {
 // // Kiválasztom az első ötöt:
 // @Input() selectedFeaturedProducts: Product[] = this.featuredProducts.slice(0, 5);
 
-@Input() topFiveFeaturedProducts: Product[] = this.productList.filter( product => product.featured )
-    .sort( () => 0.5 - Math.random())
-    .slice(0, 5);
 
-@Input() topFiveNotFeaturedProducts: Product[] = this.productList.filter( product => !product.featured )
-    .sort( () => 0.5 - Math.random())
-    .slice(0, 5);
+// Ezeketet PIPE-ok helyettesitik:
+// @Input() topFiveFeaturedProducts: Product[] = this.productList.filter( product => product.featured )
+//     .sort( () => 0.5 - Math.random())
+//     .slice(0, 5);
+// @Input() topFiveNotFeaturedProducts: Product[] = this.productList.filter( product => !product.featured )
+//     .sort( () => 0.5 - Math.random())
+//     .slice(0, 5);
 
   ngOnInit(): void {
   }

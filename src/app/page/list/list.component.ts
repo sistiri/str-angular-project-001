@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -11,7 +12,7 @@ export class ListComponent implements OnInit {
 
   @Input() product: Product = new Product();
   
-  productList: Product[] = this.productService.list;
+  @Input() productList$: Observable<Product[]> = this.productService.getAll();
 
   /* keresőkifejezés*/
    phrase: string = ''

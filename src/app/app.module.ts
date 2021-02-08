@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,11 @@ import { ProductTableComponent } from './common/product-table/product-table.comp
 import { FilterPipe } from './pipe/filter.pipe';
 import { CategoryFilterPipe } from './pipe/category-filter.pipe';
 import { ProductListComponent } from './common/product-list/product-list.component';
+import { AdminComponent } from './page/admin/admin.component';
+import { RandomPipe } from './pipe/random.pipe';
+import { FeaturedPipe } from './pipe/featured.pipe';
+import { DataEditorComponent } from './common/data-editor/data-editor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,12 +35,19 @@ import { ProductListComponent } from './common/product-list/product-list.compone
     ProductFiverComponent,
     ProductTableComponent,
     FilterPipe,
+    AdminComponent,
     CategoryFilterPipe,
-    ProductListComponent
+    ProductListComponent,
+    AdminComponent,
+    RandomPipe,
+    FeaturedPipe,
+    DataEditorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

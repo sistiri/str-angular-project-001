@@ -1,8 +1,10 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
-
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cat02',
@@ -13,15 +15,15 @@ export class Cat02Component implements OnInit {
 
   @Input() product: Product = new Product;
   @Input() phraseString: string = '';
-  @Input() productList: Product[] = this.productService.list;
-  @Input() catId: number = null;
-
+  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() categoryId: number = null;
   @Input() currentProduct: Product = new Product();
   phrase: string = '';
-  
-  @Input() topFiveFeaturedRedProducts: Product[] = this.productList.filter( product => product.featured && product.catId === 2 )
-  .sort( () => 0.5 - Math.random())
-  .slice(0, 5);
+
+  cat02Products$: Observable<Product[]> = this.productService.getAll().pipe(
+    map( products => products.filter( product => product.catId === 2))
+  );
+
 
   constructor(
     private productService: ProductService,

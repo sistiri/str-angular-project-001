@@ -15,10 +15,10 @@
 <div class="container">
     <app-product-list 
     [phraseString]="phrase" 
-    [productList$]="productList$ | async" 
+    [productList$]="productList$ | async"
     [categoryId]=1
     ></app-product-list>
 </div>
 
 adat teszt:
-{{ productList$ }}
+{{ productList$ | async | json }}

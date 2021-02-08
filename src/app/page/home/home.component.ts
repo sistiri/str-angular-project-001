@@ -1,9 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 
-import { Observable } from 'rxjs/internal/Observable';
+// import { Observable } from 'rxjs/internal/Observable';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
+import { UseExistingWebDriver } from 'protractor/built/driverProviders';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +17,16 @@ export class HomeComponent implements OnInit {
 
   title = 'Home';
 
-  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  // @Input() productList$: Observable<Product[]> = this.productService.getAll();
   @Input() product: Product = new Product;
+
+  featuredProducts$: Observable<Product[]> = this.productService.getAll().pipe(
+    map( products => products.filter( product => product.featured == true))
+  )
+
+  notFeaturedProducts$: Observable<Product[]> = this.productService.getAll().pipe(
+    map( products => products.filter( product => product.featured == false))
+  )
 
   // currentProduct: Product = new Product();
   phrase: string = '';

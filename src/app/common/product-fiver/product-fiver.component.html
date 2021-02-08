@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-6 col-lg-2" *ngFor="let product of productList$ | async | json | categoryFilter: categoryId">
+        <div class="col-sm-6 col-lg-2" *ngFor="let product of productList$ | async | slice:0:5 ">
             <app-product-card [product]="product"></app-product-card>
         </div>
     </div>

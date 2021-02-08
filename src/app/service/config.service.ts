@@ -29,14 +29,14 @@ export class ConfigService {
 
   tableCols: ITableCol[] = [
     {key: 'id', text: '#', editable: false},
-    {key: 'catID', text: 'CatId', editable: false},
+    {key: 'catId', text: 'CatId', editable: false},
     {key: 'name', text: 'Name', editable: false},
     {key: 'description', text: 'Description', editable: true},
     {key: 'price', text: 'Price', editable: true},
     {key: 'stock', text: 'Stock', editable: true},
     {key: 'featured', text: 'Featured', editable: true},
-    {key: 'action', text: 'Action', editable: true}
-  ]; 
+    {key: 'active', text: 'Active', editable: true}
+  ];
 
   constructor() { }
 }

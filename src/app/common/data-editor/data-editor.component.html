@@ -18,7 +18,6 @@
               <td *ngFor="let col of cols">
                 <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
                 <span *ngIf="!col.editable">{{ product[col.key] }}</span>
-                <span *ngIf="col.editable">{{ product[col.key] }}</span>
               </td>
               <td>
                 <div class="btn-group">
@@ -28,7 +27,7 @@
                   <button (click)="onDeleteClick(product)" class="btn btn-danger">
                     <i class="fa fa-trash"></i>
                   </button>
-                  <button (click)="onDeleteClick(product)" class="btn btn-warning">
+                  <button (click)="onPlusClick(product)" class="btn btn-warning">
                     <i class="fa fa-plus"></i>
                   </button>
                 </div>

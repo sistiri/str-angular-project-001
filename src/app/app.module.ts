@@ -20,6 +20,7 @@ import { AdminComponent } from './page/admin/admin.component';
 import { RandomPipe } from './pipe/random.pipe';
 import { FeaturedPipe } from './pipe/featured.pipe';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DataEditorComponent } from './common/data-editor/data-editor.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,11 @@
 <div class="container">
     <div class="row">
       <div class="col-12">
+        <form class="form-inline my-2" >
+          <!--onChangePhrase($event) metódus az input elem keyup eseményére.-->
+          <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Product Name">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -9,18 +14,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of productList$ | async">
+            <tr *ngFor="let product of productList$ | async | filter: phrase: 'name' ">
               <td *ngFor="let col of cols">
                 <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
                 <span *ngIf="!col.editable">{{ product[col.key] }}</span>
+                <span *ngIf="col.editable">{{ product[col.key] }}</span>
               </td>
               <td>
                 <div class="btn-group">
-                  <button (click)="onUpdate(product)" class="btn btn-info">
+                  <button (click)="onUpdateClick(product)" class="btn btn-info">
                     <i class="fa fa-refresh"></i>
                   </button>
-                  <button (click)="onDelete(product)" class="btn btn-danger">
+                  <button (click)="onDeleteClick(product)" class="btn btn-danger">
                     <i class="fa fa-trash"></i>
+                  </button>
+                  <button (click)="onDeleteClick(product)" class="btn btn-warning">
+                    <i class="fa fa-plus"></i>
                   </button>
                 </div>
               </td>

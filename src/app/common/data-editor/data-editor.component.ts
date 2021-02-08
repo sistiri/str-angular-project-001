@@ -12,10 +12,13 @@ import { ProductService } from 'src/app/service/product.service';
 export class DataEditorComponent implements OnInit {
 
   phrase: string = '';
-  productList$: Observable<Product[]> = this.productService.getAll();
+  
   cols: ITableCol[] = this.config.tableCols;
+  filterKey: string = 'name';
+  filterKeys: string[] = Object.keys(new Product())
 
   @Input() product: Product = new Product();
+  @Input() productList$: Observable<Product[]> = this.productService.getAll();
   @Output() delProduct: EventEmitter<Product> = new EventEmitter();
   @Output() updateProduct: EventEmitter<Product> = new EventEmitter();
   @Output() addProduct: EventEmitter<Product> = new EventEmitter();

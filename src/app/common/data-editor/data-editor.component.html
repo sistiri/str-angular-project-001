@@ -1,40 +1,51 @@
 <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <form class="form-inline my-2" >
-          <!--onChangePhrase($event) metódus az input elem keyup eseményére.-->
-          <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Product Name">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th *ngFor="let col of cols">{{ col.text }}</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let product of productList$ | async | filter: phrase: 'name' ">
-              <td *ngFor="let col of cols">
-                <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
-                <span *ngIf="!col.editable">{{ product[col.key] }}</span>
-              </td>
-              <td>
-                <div class="btn-group">
-                  <button (click)="onUpdateClick(product)" class="btn btn-info">
-                    <i class="fa fa-refresh"></i>
-                  </button>
-                  <button (click)="onDeleteClick(product)" class="btn btn-danger">
-                    <i class="fa fa-trash"></i>
-                  </button>
-                  <button (click)="onPlusClick(product)" class="btn btn-warning">
-                    <i class="fa fa-plus"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="row">
+    <!-- <div class="col-12"> -->
+    <div class="col-3 mt-3 mb-3">
+      <!--onChangePhrase($event) metódus az input elem keyup eseményére.-->
+      <!-- <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="search"> -->
+      <input [(ngModel)]="phrase" class="form-control mr-sm-2" type="text" placeholder="search">
     </div>
+    <p class="mt-4 mb-3 text-center justify-content">in</p>
+    <div class="col-3 mt-3 mb-3">
+      <select [(ngModel)]="filterKey" class="form-control">
+        <option *ngFor="let key of filterKeys" [value]="key">
+          {{ key }}
+        </option>
+      </select>
+    </div>
+    <button class="btn btn-outline-success mt-3 mb-3" type="submit">Search</button>
   </div>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th *ngFor="let col of cols">{{ col.text }}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productList$ | async | filter:phrase:filterKey">
+          <td *ngFor="let col of cols">
+            <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
+            <span *ngIf="!col.editable">{{ product[col.key] }}</span>
+          </td>
+          <td>
+            <div class="btn-group">
+              <button (click)="onUpdateClick(product)" class="btn btn-info">
+                <i class="fa fa-refresh"></i>
+              </button>
+              <button (click)="onDeleteClick(product)" class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+              </button>
+              <button (click)="onPlusClick(product)" class="btn btn-warning">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- </div> -->
+  </div>
+</div>

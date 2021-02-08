@@ -1,7 +1,6 @@
 <h2>Featured Red Products</h2>
 <app-product-fiver
-[productList$]="productList$ | async | featured | random | slice:0:5" 
-[categoryId]=2
+[productList$]="cat02Products$ | async | featured | random" 
 ></app-product-fiver>
 <h2>All Red Products</h2>
 <div class="mb-2">
@@ -14,8 +13,7 @@
 
 <div class="container">
     <app-product-list 
-    [categoryId]=2 
     [phraseString]="phrase" 
-    [productList$]="productList$ | async"
+    [productList$]="cat02Products$ | async"
     ></app-product-list>
 </div>

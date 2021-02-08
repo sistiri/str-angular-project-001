@@ -1,10 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
 
-// import { Observable } from 'rxjs/internal/Observable';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
-import { UseExistingWebDriver } from 'protractor/built/driverProviders';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

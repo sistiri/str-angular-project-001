@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
 
   @Input() product: Product = new Product();
   
-  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() productList$: Observable<Product[]> = this.productService.list$;
 
   /* keresőkifejezés*/
    phrase: string = ''
@@ -35,6 +35,7 @@ export class ListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.productService.getAll();
   }
 
 }

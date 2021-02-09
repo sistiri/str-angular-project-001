@@ -12,25 +12,27 @@ import { ProductService } from 'src/app/service/product.service';
 
 export class AdminComponent implements OnInit {
 
-  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() productList$: Observable<Product[]> = this.productService.list$;
+  
 
   constructor(
     private productService: ProductService,
   ) {}
 
   ngOnInit(): void {
+    this.productService.getAll();
   }
 
   onUpdate(product: Product): void {
-    this.productService.update(product).subscribe;
+    this.productService.update(product);
   }
 
   onDelete(product: Product): void {
-    this.productService.remove(product).subscribe;
+    this.productService.remove(product);
   }
 
   onPlus(product: Product): void {
-    this.productService.add(product).subscribe;
+    this.productService.add(product);
   }
 
 }

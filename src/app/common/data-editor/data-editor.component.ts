@@ -18,7 +18,7 @@ export class DataEditorComponent implements OnInit {
   filterKeys: string[] = Object.keys(new Product())
 
   @Input() product: Product = new Product();
-  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() productList$: Observable<Product[]> = this.productService.list$;
   @Output() delProduct: EventEmitter<Product> = new EventEmitter();
   @Output() updateProduct: EventEmitter<Product> = new EventEmitter();
   @Output() addProduct: EventEmitter<Product> = new EventEmitter();

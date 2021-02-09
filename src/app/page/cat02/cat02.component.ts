@@ -15,12 +15,12 @@ export class Cat02Component implements OnInit {
 
   @Input() product: Product = new Product;
   @Input() phraseString: string = '';
-  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() productList$: Observable<Product[]> = this.productService.list$;
   @Input() categoryId: number = null;
   @Input() currentProduct: Product = new Product();
   phrase: string = '';
 
-  cat02Products$: Observable<Product[]> = this.productService.getAll().pipe(
+  cat02Products$: Observable<Product[]> = this.productService.list$.pipe(
     map( products => products.filter( product => product.catId === 2))
   );
 
@@ -34,6 +34,7 @@ export class Cat02Component implements OnInit {
    }
 
   ngOnInit(): void {
+    this.productService.getAll();
   }
 
 }

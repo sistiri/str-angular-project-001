@@ -17,6 +17,11 @@
     <button class="btn btn-outline-success mt-3 mb-3" type="submit">Search</button>
   </div>
   <div class="row">
+    <div class="col-12">
+      <h2>{{ (productList$ | async)?.length }} Products</h2>
+    </div>
+  </div>
+  <div class="row">
     <table class="table table-striped">
       <thead>
         <tr>

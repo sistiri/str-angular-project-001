@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../model/product';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -11,29 +11,41 @@ export class ProductService {
 
    apiUrl: string = 'http://localhost:3000/products'
 
+//  State.
+
+    list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
+
     constructor(
         private http: HttpClient,
     ) { }
 
     // Get all users from the server.
-    getAll(): Observable<Product[]> {
-        return this.http.get<Product[]>(this.apiUrl);
+    getAll(): void {
+        this.http.get<Product[]>(this.apiUrl).subscribe (
+            products => this.list$.next(products)
+        );
     }
     // Get one user.
     get(product: Product): Observable<Product> {
         return this.http.get<Product>(`${this.apiUrl}/${product.id}`);
     }
     // Create new user.
-    add(product: Product): Observable<Product> {
-        return this.http.post<Product>(this.apiUrl, product);
+    add(product: Product): void {
+        this.http.post<Product>(this.apiUrl, product).subscribe(
+            () => this.getAll()
+        );
     }
     // Update user data
-    update(product: Product): Observable<Product> {
-        return this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product);
+    update(product: Product): void {
+        this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product).subscribe(
+            () => this.getAll()
+        );
     }
     // Remove user.
-    remove(product: Product): Observable<Product> {
-        return this.http.delete<Product>(`${this.apiUrl}/${product.id}`)
+    remove(product: Product): void {
+        this.http.delete<Product>(`${this.apiUrl}/${product.id}`).subscribe(
+            ()=> this.getAll()
+        );
     }
     
 
@@ -47,7 +59,5 @@ export class ProductService {
     // randomize(sourceArray: Observable<Product[]>): any[] {
     //     return sourceArray.sort(() => Math.random() - 0.5);
     // }
-
-   
 
 }

@@ -19,7 +19,7 @@ export class ProductFiverComponent implements OnInit {
   @Input() phraseString: string = '';
   @Input() product: Product = new Product();
   @Input() categoryId: number = null;
-  @Input() productList$: Observable<Product[]> = this.productService.getAll();
+  @Input() productList$: Observable<Product[]> = this.productService.list$;
   @Input() currentProduct: Product = new Product();
  
   

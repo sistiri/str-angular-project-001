@@ -14,14 +14,14 @@ export class HomeComponent implements OnInit {
 
   title = 'Home';
 
-  // @Input() productList$: Observable<Product[]> = this.productService.getAll();
+
   @Input() product: Product = new Product;
 
-  featuredProducts$: Observable<Product[]> = this.productService.getAll().pipe(
+  featuredProducts$: Observable<Product[]> = this.productService.list$.pipe(
     map( products => products.filter( product => product.featured == true))
   )
 
-  notFeaturedProducts$: Observable<Product[]> = this.productService.getAll().pipe(
+  notFeaturedProducts$: Observable<Product[]> = this.productService.list$.pipe(
     map( products => products.filter( product => product.featured == false))
   )
 
@@ -31,6 +31,10 @@ export class HomeComponent implements OnInit {
   constructor(
     private productService: ProductService,
   ) { }
+
+  ngOnInit(): void {
+    this.productService.getAll();
+  }
 
 // Kiválasztom a kiemelt termékeket (az összes termék a products tömbben van a példa kedvéért): 
 // featuredProducts: Product[] = this.productList.filter(product => product.featured);
@@ -48,7 +52,6 @@ export class HomeComponent implements OnInit {
 //     .sort( () => 0.5 - Math.random())
 //     .slice(0, 5);
 
-  ngOnInit(): void {
-  }
+  
 
 }
